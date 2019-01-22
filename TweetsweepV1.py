@@ -5,9 +5,11 @@ import datetime
 import csv
 
 #can add up to 100 tweets to delete at a time 
-# calls twitter 
+# calls twitter chromedriver must be downloaded with selenium for this to run properly 
 driver_path = './chromedriver'
+# url will always be 'https://twitter.com/login'
 url = 'https://twitter.com/login'
+#url1-100 will be the specific urls to each tweet you want deleted 
 url1='insert tweet url here '
 url2='insert tweet url here'
 url3='insert tweet url here'
@@ -18,13 +20,15 @@ driver.get(url)
 
 
 print 'starting program'
-
+#1-3 logs you in to your account
+#twitter username or email inserted 
 element1 = driver.find_element_by_xpath("//*[@id='page-container']/div/div[1]/form/fieldset/div[1]/input").send_keys('email adress for twitter account')
+#twitter password
 element2 = driver.find_element_by_xpath("//*[@id='page-container']/div/div[1]/form/fieldset/div[2]/input").send_keys('twitter password')
 element3 = driver.find_element_by_xpath(".//button[@type='submit' and @class='submit EdgeButton EdgeButton--primary EdgeButtom--medium']")
 driver.execute_script("arguments[0].click();", element3)
 
-
+#elements 4-9 deletes the tweet 
 element4 = driver.get(url1)
 element5 = driver.find_element_by_xpath(".//button[@type='button' and @class='ProfileTweet-actionButton u-textUserColorHover dropdown-toggle js-dropdown-toggle']")
 driver.execute_script("arguments[0].click();", element5)
@@ -32,28 +36,28 @@ element6 = driver.find_element_by_xpath("//*[@id='permalink-overlay-dialog']/div
 driver.execute_script("arguments[0].click();", element6)
 element9 = driver.find_element_by_xpath("//*[@id='delete-tweet-dialog-dialog']/div[2]/div[4]/button[2]")
 driver.execute_script("arguments[0].click();", element9)
-element10 = driver.get(url2)
+element4 = driver.get(url2)
 element5 = driver.find_element_by_xpath(".//button[@type='button' and @class='ProfileTweet-actionButton u-textUserColorHover dropdown-toggle js-dropdown-toggle']")
 driver.execute_script("arguments[0].click();", element5)
 element6 = driver.find_element_by_xpath("//*[@id='permalink-overlay-dialog']/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/div/div/ul/li[8]")
 driver.execute_script("arguments[0].click();", element6)
 element9 = driver.find_element_by_xpath("//*[@id='delete-tweet-dialog-dialog']/div[2]/div[4]/button[2]")
 driver.execute_script("arguments[0].click();", element9)
-element10 = driver.get(url3)
+element4 = driver.get(url3)
 element5 = driver.find_element_by_xpath(".//button[@type='button' and @class='ProfileTweet-actionButton u-textUserColorHover dropdown-toggle js-dropdown-toggle']")
 driver.execute_script("arguments[0].click();", element5)
 element6 = driver.find_element_by_xpath("//*[@id='permalink-overlay-dialog']/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/div/div/ul/li[8]")
 driver.execute_script("arguments[0].click();", element6)
 element9 = driver.find_element_by_xpath("//*[@id='delete-tweet-dialog-dialog']/div[2]/div[4]/button[2]")
 driver.execute_script("arguments[0].click();", element9)
-element10 = driver.get(url4)
+element4 = driver.get(url4)
 element5 = driver.find_element_by_xpath(".//button[@type='button' and @class='ProfileTweet-actionButton u-textUserColorHover dropdown-toggle js-dropdown-toggle']")
 driver.execute_script("arguments[0].click();", element5)
 element6 = driver.find_element_by_xpath("//*[@id='permalink-overlay-dialog']/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/div/div/ul/li[8]")
 driver.execute_script("arguments[0].click();", element6)
 element9 = driver.find_element_by_xpath("//*[@id='delete-tweet-dialog-dialog']/div[2]/div[4]/button[2]")
 driver.execute_script("arguments[0].click();", element9)
-element10 = driver.get(url5)
+element4 = driver.get(url5)
 element5 = driver.find_element_by_xpath(".//button[@type='button' and @class='ProfileTweet-actionButton u-textUserColorHover dropdown-toggle js-dropdown-toggle']")
 driver.execute_script("arguments[0].click();", element5)
 element6 = driver.find_element_by_xpath("//*[@id='permalink-overlay-dialog']/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/div/div/ul/li[8]")
